@@ -19,35 +19,36 @@ function HomeSwipper() {
 		{
 			id: 1,
 			topic: "House of Barca",
-			AdImage: "https://i.ytimg.com/vi/NgpQcGqMPX8/maxresdefault.jpg",
+			AdImage:
+				"https://cdn.pixabay.com/photo/2016/02/08/07/42/diamond-1186139_1280.jpg",
 			AdInfo: "Bet on a big bash and win amazing prizes",
 		},
 		{
 			id: 2,
 			topic: "first deposit mega bonus",
 			AdImage:
-				"https://v2l.traincdn.com/default/img/bonusnew/Welcome-bonus-india_945x370.jpg",
+				"https://cdn.pixabay.com/photo/2016/11/29/07/16/balancing-1868051_1280.jpg",
 			AdInfo: "welcome package upto $100",
 		},
 		{
 			id: 3,
 			topic: "amazing offer",
 			AdImage:
-				"https://v2l.traincdn.com/genfiles/cms/1/desktop/bonus/rules/1st/1st-in-slider.jpg",
+				"https://cdn.pixabay.com/photo/2020/05/12/08/59/shoes-5161935_1280.jpg",
 			AdInfo: "dont wait , take action",
 		},
 		{
 			id: 4,
 			topic: "first deposit mega bonus",
 			AdImage:
-				"https://in.1xbet.com/genfiles/cms/1-285/desktop/ourPartners/partner/barcelona/barcelona-team2x.webp",
+				"https://cdn.pixabay.com/photo/2018/05/20/01/33/background-3414801_1280.jpg",
 			AdInfo: "Bet on a big bash and win amazing prizes",
 		},
 		{
 			id: 5,
 			topic: "amazing offer",
 			AdImage:
-				"https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2369&q=80",
+				"https://cdn.pixabay.com/photo/2022/09/07/17/26/vintage-pocket-watch-7439236_1280.jpg",
 			AdInfo: "welcome package upto $100",
 		},
 	]);
@@ -75,16 +76,11 @@ function HomeSwipper() {
 								<div className={` !w-full  !h-full relative`}>
 									<img src={v.AdImage} alt='' className='!w-full !h-full' />
 									<div className='absolute top-0 right-0 left-0 bottom-0'>
-										<div className='w-full h-full flex flex-col pl-14 justify-center space-y-4 text-white'>
+										<div className='w-full h-full flex flex-col pl-14 justify-end items-center  space-y-4 text-white'>
 											<div className='font-extrabold text-4xl capitalize'>
 												{v.topic}
 											</div>
 											<div>{v.AdInfo}</div>
-											<div>
-												<button className='px-3 py-1 bg-lime-500'>
-													Take action
-												</button>
-											</div>
 										</div>
 									</div>
 								</div>
