@@ -67,7 +67,7 @@ function HomeSwipper() {
 					// 	delay: 5000,
 					// 	disableOnInteraction: false,
 					// }}
-					className=' !w-full    '
+					className=' !w-full bg-slate-500    '
 				>
 					{adviews.map((v, i) => {
 						return (

@@ -3,6 +3,8 @@ import Footer from "../../components/Footer";
 import Swipperslide from "./HomePageComponents/HomeSwipper";
 import HomeSideBar from "./HomePageComponents/HomeSideBar";
 import HomeSwipper from "./HomePageComponents/HomeSwipper";
+import HomeProSlider from "./HomePageComponents/HomeProSlider";
+import HomeSnapAdd from "./HomePageComponents/HomeSnapAdd";
 
 function HomePage() {
 	const [open, setOpen] = useState(true);
@@ -51,13 +53,16 @@ function HomePage() {
 				</div>
 
 				{/* the sportContainer component contain the table for the sporpage. live Container also has one. */}
-				<div className='col-span-full md:col-span-7 w-full   h-full  overflow-y-scroll overflow-x-scroll '>
+				<div className='col-span-full md:col-span-7   overflow-y-scroll overflow-x-scroll '>
 					<div className='w-full h-full'>
-						<div className='flex w-full '>
+						<div className='flex w-full space-x-2 '>
 							<div className=' w-full'>
 								<HomeSwipper />
 							</div>
 							<div className='w-52 h-10 bg-cyan-500'>dsdsdxs</div>
+						</div>
+						<div className='w-full flex justify-start bg-red-400 py-10'>
+							<HomeProSlider />
 						</div>
 						<div className='text-black '>
 							<div>
@@ -67,6 +72,9 @@ function HomePage() {
 						</div>
 					</div>
 				</div>
+			</div>
+			<div>
+				<HomeSnapAdd />
 			</div>
 
 			<div>
