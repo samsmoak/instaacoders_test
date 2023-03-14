@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Footer from "../../components/Footer";
 import Swipperslide from "./HomePageComponents/HomeSwipper";
-import HomeSideBar from "./HomePageComponents/HomeSideBar";
+import HomeSideBar from "./HomePageComponents/HomeSideBar/HomeSideBar";
 import HomeSwipper from "./HomePageComponents/HomeSwipper";
 import HomeProSlider from "./HomePageComponents/HomeProSlider";
 import HomeSnapAdd from "./HomePageComponents/HomeSnapAdd";
@@ -48,7 +48,7 @@ function HomePage() {
 						</div>
 					</div>
 				</div>
-				<div className=' hidden md:flex md:col-span-1  h-full overflow-y-scroll  '>
+				<div className=' hidden md:flex md:col-span-1  h-full   '>
 					<HomeSideBar />
 				</div>
 
