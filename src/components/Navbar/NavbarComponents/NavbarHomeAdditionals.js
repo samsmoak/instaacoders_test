@@ -9,7 +9,7 @@ function NavbarHomeAdditionals() {
 	return (
 		<div className='mb-96'>
 			<Link to='/cart' className=' px-4 '>
-				<div className='flex bg-red-500 w-full py-2'>
+				<div className='flex justify-center bg-red-500 w-full py-2'>
 					<div>cart</div>
 					<div className='relative'>
 						<svg

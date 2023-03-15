@@ -17,7 +17,7 @@ function Mainlayout() {
 		<div className='  '>
 			<BrowserRouter>
 				<div className='w-screen  '>
-					<div className='w-full fixed top-0 z-40'>
+					<div className='w-full fixed top-0 z-50'>
 						<NavbarTop />
 						<Navbar lenghter={betslip.length} />
 					</div>

@@ -35,14 +35,12 @@ function Navbar(Prop) {
 						</div>
 						{
 							<div
-								className={`absolute transform duration-300 right-7 top-8 bg-white w-60 h-screen  overflow-y-scroll   ${
+								className={`absolute transform z-50  duration-300 right-7 top-8 bg-white w-60 h-screen  overflow-y-scroll   ${
 									navSide ? "-translate-x-7" : "translate-x-full"
 								}`}
 							>
-								<div className='relative'>
-									<HomeSideBar />
-									<NavbarHomeAdditionals />
-								</div>
+								<HomeSideBar />
+								<NavbarHomeAdditionals />
 							</div>
 						}
 					</div>
