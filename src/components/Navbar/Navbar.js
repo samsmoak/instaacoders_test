@@ -5,20 +5,61 @@ import React, { useContext, useEffect, useRef, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import NavbarSigninButton from "./NavbarComponents/NavbarSigninButton";
 import { Context } from "../../context/Context";
+import HomeSideBar from "../../Pages/HomePage/HomePageComponents/HomeSideBar/HomeSideBar";
 
 function Navbar() {
 	let location = useLocation();
 	const [open, setOpen] = useState(false);
 	const { betslip } = useContext(Context);
+	const [navSide, setNavSide] = useState(true);
 	return (
-		<div className='h-14 bg-[#E40345] px-16 grid items-center '>
+		<div className='h-14 bg-[#E40345] px-8 grid items-center '>
 			<div className='text-white flex justify-between '>
-				<div className='flex w-full'>
-					<div className='w-24'>
-						<Link to='/'>snap deal</Link>
+				<div className='flex w-full items-center '>
+					<div className='hidden xl:block cursor-pointer relative mr-3'>
+						<div className='' onClick={() => setNavSide(!navSide)}>
+							<svg
+								xmlns='http://www.w3.org/2000/svg'
+								viewBox='0 0 24 24'
+								fill='currentColor'
+								class='w-6 h-6'
+							>
+								<path
+									fill-rule='evenodd'
+									d='M3 6.75A.75.75 0 013.75 6h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 6.75zM3 12a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 12zm0 5.25a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75a.75.75 0 01-.75-.75z'
+									clip-rule='evenodd'
+								/>
+							</svg>
+						</div>
+						{
+							<div
+								className={`absolute transform duration-300 right-7 top-10 bg-white w-60   ${
+									navSide ? "-translate-x-7" : "translate-x-full"
+								}`}
+							>
+								<HomeSideBar />
+							</div>
+						}
 					</div>
-					<div className='w-full'>
+					<div className='w-40 flex space-x-1 items-center'>
+						<Link to='/' className='text-2xl font-light'>
+							snapdeal
+						</Link>
+						<svg
+							xmlns='http://www.w3.org/2000/svg'
+							viewBox='0 0 24 24'
+							fill='currentColor'
+							class='w-6 h-6'
+						>
+							<path d='M11.644 1.59a.75.75 0 01.712 0l9.75 5.25a.75.75 0 010 1.32l-9.75 5.25a.75.75 0 01-.712 0l-9.75-5.25a.75.75 0 010-1.32l9.75-5.25z' />
+							<path d='M3.265 10.602l7.668 4.129a2.25 2.25 0 002.134 0l7.668-4.13 1.37.739a.75.75 0 010 1.32l-9.75 5.25a.75.75 0 01-.71 0l-9.75-5.25a.75.75 0 010-1.32l1.37-.738z' />
+							<path d='M10.933 19.231l-7.668-4.13-1.37.739a.75.75 0 000 1.32l9.75 5.25c.221.12.489.12.71 0l9.75-5.25a.75.75 0 000-1.32l-1.37-.738-7.668 4.13a2.25 2.25 0 01-2.134-.001z' />
+						</svg>
+					</div>
+					<div className='flex w-full py-2'>
 						<input type='text' placeholder='search' className='w-full' />
+
+						<button className=' px-4 bg-zinc-800'>search</button>
 					</div>
 				</div>
 				<div className='flex  space-x-10 pl-24 items-center justify-end '>

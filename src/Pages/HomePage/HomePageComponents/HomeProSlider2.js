@@ -12,7 +12,7 @@ import { A11y, Navigation, Pagination } from "swiper";
 import { Link } from "react-router-dom";
 import { Context } from "../../../context/Context";
 
-function HomeProSlider() {
+function HomeProSlider2() {
 	const { betHandler, deleteBetSlip, betslip } = useContext(Context);
 	const [butter, setButter] = useState(false);
 	const [Product, setProduct] = useState([
@@ -135,7 +135,7 @@ function HomeProSlider() {
 				</button>
 			</div>
 			<Swiper
-				slidesPerView={2}
+				slidesPerView={3}
 				// spaceBetween={2}
 				pagination={{
 					clickable: true,
@@ -151,7 +151,7 @@ function HomeProSlider() {
 					return (
 						<SwiperSlide className='w-96 h-full  px-2  rounded-lg'>
 							<div className=' '>
-								<div className='bg-white w-56 sm:w-72   overflow-hidden shadow-md rounded-2xl'>
+								<div className='bg-white md:w-72   overflow-hidden shadow-md rounded-2xl'>
 									<Link
 										to={`/product/${p.ProductId}`}
 										style={{ textDecoration: "none" }}
@@ -164,7 +164,7 @@ function HomeProSlider() {
 											/>
 										</div>
 										<div>
-											<h1 className=' w-full h-12 pt-2 px-2 pb-4 truncate font-light text-sm text-black  bg-bluelight-300 bg-opacity-70 hover:bg-opacity-100'>
+											<h1 className=' w-full h-12 pt-2 px-2 pb-4  truncate font-light text-sm text-black  bg-bluelight-300 bg-opacity-70 hover:bg-opacity-100'>
 												{p.ProductName}
 											</h1>
 										</div>
@@ -250,4 +250,4 @@ function HomeProSlider() {
 	);
 }
 
-export default HomeProSlider;
+export default HomeProSlider2;

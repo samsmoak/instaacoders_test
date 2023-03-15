@@ -6,88 +6,84 @@ import HomeSwipper from "./HomePageComponents/HomeSwipper";
 import HomeProSlider from "./HomePageComponents/HomeProSlider";
 import HomeSnapAdd from "./HomePageComponents/HomeSnapAdd";
 import { Context } from "../../context/Context";
+import HomeProSlider2 from "./HomePageComponents/HomeProSlider2";
+import HomeProSlider3 from "./HomePageComponents/HomeProSlider3";
+import { Link } from "react-router-dom";
 
 function HomePage() {
 	const [open, setOpen] = useState(true);
 	const { betslip } = useContext(Context);
 	const miniarray = betslip.slice(-3);
 	return (
-		<div className='w-full  lg:px-10'>
+		<div className='w-full  xl:px-10'>
 			<div className='w-full grid grid-cols-8 gap-x-2  relative  h-full'>
 				{/* the sidebar is generally specific to the page for example the livepage also has its sidebar with data
 			displayed with respect to that page
 			*/}
 				<div
-					className={` absolute  z-40 md:hidden duration-200   ${
-						true ? "translate-x-0" : "-translate-x-full"
+					className={` absolute  z-20 xl:hidden duration-200   ${
+						open ? "translate-x-0" : "-translate-x-full"
 					}`}
 				>
-					<div className='relative'>
-						<div className='w-40'>
-							<HomeSideBar />
-						</div>
-
+					<div className='relative bg-slate-50'>
+						<HomeSideBar />
 						<div
-							className='absolute cursor-pointer top-0 z-30 -right-4  '
+							className='absolute cursor-pointer top-0 z-40 -right-4  '
 							onClick={() => {
 								setOpen(!open);
 							}}
 						>
-							{/* <i class='fa-solid fa-square-caret-left font-extrabold text-xl text-rose-600'></i> */}
-							<svg
-								xmlns='http://www.w3.org/2000/svg'
-								fill='none'
-								viewBox='0 0 24 24'
-								stroke-width='1.5'
-								stroke='currentColor'
-								class='w-6 h-6 text-rose-600'
-							>
-								<path
-									stroke-linecap='round'
-									stroke-linejoin='round'
-									d='M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18'
-								/>
-							</svg>
+							<i class='fa-solid fa-square-caret-left font-extrabold text-2xl text-rose-600'></i>
 						</div>
 					</div>
 				</div>
-				<div className=' hidden md:flex md:col-span-1  h-full   '>
+				<div className=' hidden xl:flex xl:col-span-1  h-full   '>
 					<HomeSideBar />
 				</div>
 
 				{/* the sportContainer component contain the table for the sporpage. live Container also has one. */}
-				<div className='col-span-full md:col-span-7   overflow-y-scroll overflow-x-scroll '>
+				<div className='col-span-full lg:col-span-7   overflow-y-scroll overflow-x-scroll '>
 					<div className='w-full h-full'>
 						<div className='flex w-full  '>
-							<div className=' w-10/12'>
+							<div className=' lg:w-10/12'>
 								<HomeSwipper />
 							</div>
-							<div className='w-2/12 px-2'>
+							<div className='hidden lg:block w-2/12 px-2'>
 								<div className=' h-10  text-sm capitalize text-center'>
 									your Cart
 								</div>
 								<div className='font-light text-sm '>
 									{miniarray.map((v) => {
 										return (
-											<div className='mb-3'>
-												<div className='flex items-center'>
-													<div className='w-72 h-10'>
-														<img
-															src={v.ProductImage}
-															className='h-full w-full  bg-contain '
-															alt=''
-														/>
+											<Link to={`/product/${v.ProductId}`}>
+												<div className='mb-3'>
+													<div className='flex space-x-2 items-center'>
+														<div className=''>
+															<img
+																src={v.ProductImage}
+																className='w-16  bg-contain '
+																alt=''
+															/>
+														</div>
+														<div className='truncate'>{v.ProductName}</div>
 													</div>
-													<div className='truncate'>{v.ProductName}</div>
+													<div className='w-full text-end'>
+														{v.ProductPrice}
+													</div>
 												</div>
-												<div>{v.ProductPrice}</div>
-											</div>
+											</Link>
 										);
 									})}
 								</div>
 							</div>
 						</div>
-						<div className='w-full flex justify-start bg-red-400 py-10'>
+						<div className='hidden xl:flex w-full  xl:justify-start  py-10'>
+							<HomeProSlider3 />
+						</div>
+						<div className='md:flex xl:hidden hidden w-full  justify-center  items-center  py-10'>
+							<HomeProSlider2 />
+						</div>
+						<div className='flex md:hidden w-full  justify-center items-center  py-10'>
 							<HomeProSlider />
 						</div>
 					</div>

@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import { Link } from "react-router-dom";
 import Footer from "../../components/Footer";
 import { Context } from "../../context/Context";
 
@@ -41,7 +42,9 @@ function CartPage() {
 												</div>
 											</div>
 											<div className='w-72   flex flex-col space-y-5 items-center justify-center'>
-												<div className='w-full'>{p.ProductName}</div>
+												<Link to={`/product/${p.ProductId}`}>
+													<div className='w-full'>{p.ProductName}</div>
+												</Link>
 												<div className='w-full flex'>
 													<button
 														onClick={

@@ -15,8 +15,8 @@ export const ContextProvider = ({ children }) => {
 	const [state, dispatch] = useReducer(Reducer, INITIAL_STATE);
 	const [betslip, setBetslip] = useState(Another_State);
 	const [signupOpen, setSignupOpen] = useState(false);
-	const betHandler = (ProductName, ProductPrice, ProductImage) => {
-		const objy = { ProductName, ProductPrice, ProductImage };
+	const betHandler = (ProductName, ProductPrice, ProductImage, ProductId) => {
+		const objy = { ProductName, ProductPrice, ProductImage, ProductId };
 		setBetslip([...betslip, objy]);
 		console.log(betslip);
 
@@ -39,7 +39,12 @@ export const ContextProvider = ({ children }) => {
 		// 	console.log(betslip);
 		// }
 	};
-	const deleteBetSlip = (ProductName, ProductPrice, ProductImage) => {
+	const deleteBetSlip = (
+		ProductName,
+		ProductPrice,
+		ProductImage,
+		ProductId
+	) => {
 		setBetslip((betslip) =>
 			betslip.filter((element) => {
 				return element.ProductName !== ProductName;
