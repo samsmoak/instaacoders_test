@@ -11,7 +11,7 @@ function HomeSideBar() {
 	let location = useLocation();
 	const [open, setOpen] = useState(false);
 	return (
-		<div className='w-full z-30 space-y-5 shadow-2xl p-2 font-light text-sm'>
+		<div className='w-full z-50 space-y-5 shadow-2xl p-2 font-light text-sm'>
 			<div className='w-full'>
 				<div className='py-2  w-full capitalize text-center font-bold text-sm'>
 					top category

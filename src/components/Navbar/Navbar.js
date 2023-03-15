@@ -4,13 +4,15 @@ import { Layout } from "@elastic/react-search-ui-views";
 import React, { useContext, useEffect, useRef, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import NavbarSigninButton from "./NavbarComponents/NavbarSigninButton";
-import { Context } from "../../context/Context";
+// import { Context } from "../../context/Context";
 import HomeSideBar from "../../Pages/HomePage/HomePageComponents/HomeSideBar/HomeSideBar";
+import NavbarHomeAdditionals from "./NavbarComponents/NavbarHomeAdditionals";
+// import { Context } from "../../context/Context";
 
-function Navbar() {
+function Navbar(Prop) {
 	let location = useLocation();
 	const [open, setOpen] = useState(false);
-	const { betslip } = useContext(Context);
+
 	const [navSide, setNavSide] = useState(true);
 	return (
 		<div className='h-14 bg-[#E40345] md:px-8 grid items-center '>
@@ -33,11 +35,14 @@ function Navbar() {
 						</div>
 						{
 							<div
-								className={`absolute transform duration-300 right-7 top-10 bg-white w-60   ${
+								className={`absolute transform duration-300 right-7 top-8 bg-white w-60 h-screen  overflow-y-scroll   ${
 									navSide ? "-translate-x-7" : "translate-x-full"
 								}`}
 							>
-								<HomeSideBar />
+								<div className='relative'>
+									<HomeSideBar />
+									<NavbarHomeAdditionals />
+								</div>
 							</div>
 						}
 					</div>
@@ -89,7 +94,7 @@ function Navbar() {
 												className='bg-white rounded-full w-4 h-4 text-center
 											'
 											>
-												{betslip.length}
+												{Prop.lenghter}
 											</div>
 										</div>
 									</div>

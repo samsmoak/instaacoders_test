@@ -11,13 +11,15 @@ import Routez from "../Routes";
 
 function Mainlayout() {
 	const { signupOpen, signinOpen, signupOpenHandler } = useContext(Context);
+	const { betslip } = useContext(Context);
+
 	return (
 		<div className='  '>
 			<BrowserRouter>
 				<div className='w-screen  '>
 					<div className='w-full fixed top-0 z-40'>
 						<NavbarTop />
-						<Navbar />
+						<Navbar lenghter={betslip.length} />
 					</div>
 					<div className='mt-24'>
 						<Routez />
