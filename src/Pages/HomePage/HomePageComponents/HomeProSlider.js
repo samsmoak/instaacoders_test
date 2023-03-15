@@ -91,7 +91,7 @@ function HomeProSlider() {
 			<div className='w-full flex justify-between z-30 absolute px-5 top-40'>
 				<button
 					id='custom_next'
-					className={`py-1 px-1 bg-ShaBlue2-700 text-gray-300  rounded-full transform duration-500 ${
+					className={`py-1 px-1 bg-amber-200 text-gray-300  rounded-full transform duration-500 ${
 						butter ? "flex duration-500" : "hidden"
 					}`}
 					ref={navigationNextRef9}
@@ -102,7 +102,7 @@ function HomeProSlider() {
 						viewBox='0 0 24 24'
 						stroke-width='1.5'
 						stroke='currentColor'
-						class={`w-4 h-4 text-black`}
+						class={`w-4 h-4 text-black font-extrabold`}
 					>
 						<path
 							stroke-linecap='round'
@@ -113,7 +113,7 @@ function HomeProSlider() {
 				</button>
 				<button
 					id='custom_prev'
-					className={`py-1 px-1  bg-ShaBlue2-700 text-gray-300   rounded-full transform duration-500 ${
+					className={`py-1 px-1  bg-yellow-200 text-gray-300   rounded-full transform duration-500 ${
 						butter ? "flex duration-500" : "hidden"
 					}`}
 					ref={navigationPrevRef9}
@@ -163,7 +163,7 @@ function HomeProSlider() {
 									<div className=' text-black  flex flex-col justify-end px-3 py-4 space-y-4'>
 										<div>
 											<Link
-												to={`/post/${p._id}`}
+												to={`/product/${p.ProductId}`}
 												style={{ textDecoration: "none" }}
 											>
 												<h1 className=' w-full h-14 truncate font-extrabold text-sm text-black  bg-bluelight-300 bg-opacity-70 hover:bg-opacity-100'>

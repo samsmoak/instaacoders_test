@@ -58,18 +58,18 @@ function HomePage() {
 				{/* the sportContainer component contain the table for the sporpage. live Container also has one. */}
 				<div className='col-span-full md:col-span-7   overflow-y-scroll overflow-x-scroll '>
 					<div className='w-full h-full'>
-						<div className='flex w-full space-x-2 '>
-							<div className=' w-full'>
+						<div className='flex w-full  '>
+							<div className=' w-10/12'>
 								<HomeSwipper />
 							</div>
-							<div className='w-48'>
+							<div className='w-2/12 px-2'>
 								<div className=' h-10  text-sm capitalize text-center'>
 									your Cart
 								</div>
-								<div>
+								<div className='font-light text-sm '>
 									{miniarray.map((v) => {
 										return (
-											<div>
+											<div className='mb-3'>
 												<div className='flex items-center'>
 													<div className='w-72 h-10'>
 														<img
