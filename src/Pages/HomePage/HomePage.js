@@ -1,13 +1,16 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import Footer from "../../components/Footer";
 import Swipperslide from "./HomePageComponents/HomeSwipper";
 import HomeSideBar from "./HomePageComponents/HomeSideBar/HomeSideBar";
 import HomeSwipper from "./HomePageComponents/HomeSwipper";
 import HomeProSlider from "./HomePageComponents/HomeProSlider";
 import HomeSnapAdd from "./HomePageComponents/HomeSnapAdd";
+import { Context } from "../../context/Context";
 
 function HomePage() {
 	const [open, setOpen] = useState(true);
+	const { betslip } = useContext(Context);
+	const miniarray = betslip.slice(-3);
 	return (
 		<div className='w-full  lg:px-10'>
 			<div className='w-full grid grid-cols-8 gap-x-2  relative  h-full'>
@@ -59,7 +62,30 @@ function HomePage() {
 							<div className=' w-full'>
 								<HomeSwipper />
 							</div>
-							<div className='w-52 h-10 bg-cyan-500'>dsdsdxs</div>
+							<div className='w-48'>
+								<div className=' h-10  text-sm capitalize text-center'>
+									your Cart
+								</div>
+								<div>
+									{miniarray.map((v) => {
+										return (
+											<div>
+												<div className='flex items-center'>
+													<div className='w-72 h-10'>
+														<img
+															src={v.ProductImage}
+															className='h-full w-full  bg-contain '
+															alt=''
+														/>
+													</div>
+													<div className='truncate'>{v.ProductName}</div>
+												</div>
+												<div>{v.ProductPrice}</div>
+											</div>
+										);
+									})}
+								</div>
+							</div>
 						</div>
 						<div className='w-full flex justify-start bg-red-400 py-10'>
 							<HomeProSlider />

@@ -15,32 +15,34 @@ export const ContextProvider = ({ children }) => {
 	const [state, dispatch] = useReducer(Reducer, INITIAL_STATE);
 	const [betslip, setBetslip] = useState(Another_State);
 	const [signupOpen, setSignupOpen] = useState(false);
-	const betHandler = (value, name, rowid) => {
-		const objy = { value, name, rowid };
+	const betHandler = (ProductName, ProductPrice, ProductImage) => {
+		const objy = { ProductName, ProductPrice, ProductImage };
+		setBetslip([...betslip, objy]);
+		console.log(betslip);
 
-		if (betslip.find((dt) => lodash.isEqual(dt.name, name))) {
-			console.log("ncontained");
-			console.log(betslip.find((dt) => lodash.isEqual(dt.name, name)));
+		// if (betslip.find((dt) => lodash.isEqual(dt.name, name))) {
+		// 	console.log("ncontained");
+		// 	console.log(betslip.find((dt) => lodash.isEqual(dt.name, name)));
 
-			betslip.filter((element) => {
-				return element.name !== name;
-			});
+		// 	betslip.filter((element) => {
+		// 		return element.name !== name;
+		// 	});
 
-			// if (betslip.find((dt) => lodash.isEqual(dt.name, objy.name))) {
-			// 	console.log("n sec");
-			// 	betslip.filter((element) => {
-			// 		return element.rowid == rowid;
-			// 	});
-			// }
-		} else {
-			setBetslip([...betslip, objy]);
-			console.log(betslip);
-		}
+		// 	// if (betslip.find((dt) => lodash.isEqual(dt.name, objy.name))) {
+		// 	// 	console.log("n sec");
+		// 	// 	betslip.filter((element) => {
+		// 	// 		return element.rowid == rowid;
+		// 	// 	});
+		// 	// }
+		// } else {
+		// 	setBetslip([...betslip, objy]);
+		// 	console.log(betslip);
+		// }
 	};
-	const deleteBetSlip = (value, name, rowid) => {
+	const deleteBetSlip = (ProductName, ProductPrice, ProductImage) => {
 		setBetslip((betslip) =>
 			betslip.filter((element) => {
-				return element.rowid !== rowid;
+				return element.ProductName !== ProductName;
 			})
 		);
 	};
