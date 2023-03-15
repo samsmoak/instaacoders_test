@@ -56,19 +56,17 @@ function HomePage() {
 									{miniarray.map((v) => {
 										return (
 											<Link to={`/product/${v.ProductId}`}>
-												<div className='mb-3'>
-													<div className='flex space-x-2 items-center'>
-														<div className=''>
-															<img
-																src={v.ProductImage}
-																className='w-16  bg-contain '
-																alt=''
-															/>
-														</div>
-														<div className='truncate'>{v.ProductName}</div>
+												<div className='mb-3 '>
+													<div className=''>
+														<img
+															src={v.ProductImage}
+															className='w-8  bg-contain '
+															alt=''
+														/>
 													</div>
-													<div className='w-full text-end'>
-														{v.ProductPrice}
+													<div className='flex'>
+														<div className='truncate'>{v.ProductName}</div>
+														<div className=' text-end'>{v.ProductPrice}</div>
 													</div>
 												</div>
 											</Link>

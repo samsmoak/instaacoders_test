@@ -20,7 +20,7 @@ function HomeSwipper() {
 			id: 1,
 			topic: "House of Barca",
 			AdImage:
-				"https://cdn.pixabay.com/photo/2016/02/08/07/42/diamond-1186139_1280.jpg",
+				"https://images.unsplash.com/photo-1490481651871-ab68de25d43d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2370&q=80",
 			AdInfo: "Bet on a big bash and win amazing prizes",
 		},
 		{
@@ -72,12 +72,12 @@ function HomeSwipper() {
 				>
 					{adviews.map((v, i) => {
 						return (
-							<SwiperSlide className=' !h-64 !w-full '>
+							<SwiperSlide className=' !h-72 !w-full '>
 								<div className={` !w-full  !h-full relative`}>
 									<img src={v.AdImage} alt='' className='!w-full !h-full' />
 									<div className='absolute top-0 right-0 left-0 bottom-0'>
-										<div className='w-full h-full flex flex-col pl-14 justify-end items-center  space-y-4 text-white'>
-											<div className='font-extrabold text-4xl capitalize'>
+										<div className='w-full h-full flex flex-col pl-14 justify-end items-center  space-y-4 text-black'>
+											<div className=' text-xl capitalize font-extrabold'>
 												{v.topic}
 											</div>
 											<div>{v.AdInfo}</div>

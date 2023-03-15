@@ -15,6 +15,7 @@ export const ContextProvider = ({ children }) => {
 	const [state, dispatch] = useReducer(Reducer, INITIAL_STATE);
 	const [betslip, setBetslip] = useState(Another_State);
 	const [signupOpen, setSignupOpen] = useState(false);
+	const [signinOpen, setSigninOpen] = useState(false);
 	const betHandler = (ProductName, ProductPrice, ProductImage, ProductId) => {
 		const objy = { ProductName, ProductPrice, ProductImage, ProductId };
 		setBetslip([...betslip, objy]);
@@ -58,6 +59,9 @@ export const ContextProvider = ({ children }) => {
 	const signupOpenHandler = () => {
 		setSignupOpen(!signupOpen);
 	};
+	const signinOpenHandler = () => {
+		setSigninOpen(!signinOpen);
+	};
 	useEffect(() => {
 		localStorage.setItem("user", JSON.stringify(state.user));
 	}, [state.user]);
@@ -73,7 +77,9 @@ export const ContextProvider = ({ children }) => {
 				deleteBetSlip,
 				deleteAllBetSlip,
 				signupOpen,
+				signinOpen,
 				signupOpenHandler,
+				signinOpenHandler,
 			}}
 		>
 			{children}

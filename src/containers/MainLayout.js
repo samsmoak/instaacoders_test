@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { BrowserRouter, RouterProvider } from "react-router-dom";
+import Login from "../components/Login";
 import Navbar from "../components/Navbar/Navbar";
 import NavbarTop from "../components/NavbarTop/NavbarTop";
 import Register from "../components/Register";
@@ -9,7 +10,7 @@ import Routez from "../Routes";
 // import Routess from "../Routes";
 
 function Mainlayout() {
-	const { signupOpen, signupOpenHandler } = useContext(Context);
+	const { signupOpen, signinOpen, signupOpenHandler } = useContext(Context);
 	return (
 		<div className='  '>
 			<BrowserRouter>
@@ -22,6 +23,7 @@ function Mainlayout() {
 						<Routez />
 					</div>
 					{signupOpen && <Register />}
+					{signinOpen && <Login />}
 				</div>
 			</BrowserRouter>
 		</div>

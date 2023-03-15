@@ -6,7 +6,8 @@ function NavbarSigninButton() {
 	let location = useLocation();
 	const [open, setOpen] = useState(false);
 	const [navSide, setNavSide] = useState(true);
-	const { signupOpenHandler } = useContext(Context);
+	const { signupOpenHandler, signinOpenHandler } = useContext(Context);
+
 	return (
 		<div>
 			<div
@@ -125,7 +126,7 @@ function NavbarSigninButton() {
 								</div>
 								<div className='text-base w-full'>
 									<button
-										onClick='{signupOpenHandler}'
+										onClick={signinOpenHandler}
 										className='text-sm py-2 w-full bg-rose-500  '
 									>
 										login
