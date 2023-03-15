@@ -151,7 +151,7 @@ function HomeProSlider() {
 					return (
 						<SwiperSlide className='w-96 h-full  px-2  rounded-lg'>
 							<div className=' '>
-								<div className='bg-white w-56 sm:w-72   overflow-hidden shadow-md rounded-2xl'>
+								<div className='bg-white w-32 sm:w-72   overflow-hidden shadow-md rounded-2xl'>
 									<Link
 										to={`/product/${p.ProductId}`}
 										style={{ textDecoration: "none" }}
@@ -160,7 +160,7 @@ function HomeProSlider() {
 											<img
 												src={p.ProductImage}
 												alt=''
-												className='h-full w-full object-cover '
+												className='h-full w-full object-contain '
 											/>
 										</div>
 										<div>
