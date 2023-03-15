@@ -13,10 +13,10 @@ function Navbar() {
 	const { betslip } = useContext(Context);
 	const [navSide, setNavSide] = useState(true);
 	return (
-		<div className='h-14 bg-[#E40345] px-8 grid items-center '>
+		<div className='h-14 bg-[#E40345] md:px-8 grid items-center '>
 			<div className='text-white flex justify-between '>
 				<div className='flex w-full items-center '>
-					<div className='hidden xl:block cursor-pointer relative mr-3'>
+					<div className=' cursor-pointer relative mr-3'>
 						<div className='' onClick={() => setNavSide(!navSide)}>
 							<svg
 								xmlns='http://www.w3.org/2000/svg'
@@ -62,7 +62,7 @@ function Navbar() {
 						<button className=' px-4 bg-zinc-800'>search</button>
 					</div>
 				</div>
-				<div className='flex  space-x-10 pl-24 items-center justify-end '>
+				<div className=' hidden sm:flex  space-x-10 pl-24 sm:items-center sm:justify-end '>
 					<div className=''>
 						<Link to='/cart'>
 							<div className='flex'>

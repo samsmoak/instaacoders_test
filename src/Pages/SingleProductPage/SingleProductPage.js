@@ -82,13 +82,17 @@ function SingleProductPage() {
 				<div className='w-full font-bold text-center'>
 					your cart has {betslip.length} item in it
 				</div>
-				<div className='  w-10/12 grid md:grid-cols-12 text-sm font-light p-10 shadow-lg'>
+				<div className='  md:w-10/12 grid md:grid-cols-12 text-sm font-light p-10 shadow-lg'>
 					<div className='col-span-1 md:col-span-4  flex items-center'>
-						<div className='text-black w-full'>
-							<img src={product.ProductImage} className='w-full' alt='' />
+						<div className='text-black w-full flex justify-center '>
+							<img
+								src={product.ProductImage}
+								className='w-48 sm:w-full'
+								alt=''
+							/>
 						</div>
 					</div>
-					<div className='  col-span-1 md:col-span-8'>
+					<div className='  col-span-full md:col-span-8'>
 						<div className='w-full p-16 space-y-10'>
 							<div>
 								<div>{product.ProductName}</div>
@@ -96,15 +100,15 @@ function SingleProductPage() {
 								<div>{product.ProductPrice}</div>
 							</div>
 							<div className='space-y-4'>
-								<div className='flex'>
-									<div className='w-40'>color</div>
+								<div className='md:flex'>
+									<div className='md:w-40'>color</div>
 									<div>
 										<img src={product.ProductImage} className='w-16' alt='' />
 									</div>
 								</div>
 
-								<div className='flex'>
-									<div className='w-40'>size</div>
+								<div className='md:flex'>
+									<div className='md:w-40'>size</div>
 									<div className='flex space-x-1'>
 										<div className='p-2 border'>23</div>
 										<div className='p-2 border'>23</div>
@@ -112,8 +116,8 @@ function SingleProductPage() {
 										<div className='p-2 border'>23</div>
 									</div>
 								</div>
-								<div className='flex'>
-									<div className='w-40 '></div>
+								<div className='md:flex'>
+									<div className='md:w-40 '></div>
 									<div className='flex items-center space-x-3 '>
 										<div className='text-white'>
 											{betslip.find(
