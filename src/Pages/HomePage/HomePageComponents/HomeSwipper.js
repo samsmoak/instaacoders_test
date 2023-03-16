@@ -64,10 +64,10 @@ function HomeSwipper() {
 					keyboard={true}
 					longSwipes={true}
 					modules={[Navigation, Pagination, Mousewheel, Keyboard, Autoplay]}
-					// autoplay={{
-					// 	delay: 5000,
-					// 	disableOnInteraction: false,
-					// }}
+					autoplay={{
+						delay: 5000,
+						disableOnInteraction: false,
+					}}
 					className=' !w-full bg-slate-500    '
 				>
 					{adviews.map((v, i) => {

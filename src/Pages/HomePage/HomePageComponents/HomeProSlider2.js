@@ -8,7 +8,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 
 // import required modules
-import { A11y, Navigation, Pagination } from "swiper";
+import { A11y, Autoplay, Navigation, Pagination } from "swiper";
 import { Link } from "react-router-dom";
 import { Context } from "../../../context/Context";
 
@@ -78,8 +78,8 @@ function HomeProSlider2() {
 		},
 	]);
 	const [swiperRef, setSwiperRef] = useState(null);
-	const navigationPrevRef9 = React.useRef(null);
-	const navigationNextRef9 = React.useRef(null);
+	const navigationPrevRef8 = React.useRef(null);
+	const navigationNextRef8 = React.useRef(null);
 
 	return (
 		<div
@@ -93,7 +93,7 @@ function HomeProSlider2() {
 					className={`py-1 px-1 bg-amber-200 text-gray-300  rounded-full transform duration-500 ${
 						butter ? "flex duration-500" : "hidden"
 					}`}
-					ref={navigationNextRef9}
+					ref={navigationNextRef8}
 				>
 					<svg
 						xmlns='http://www.w3.org/2000/svg'
@@ -115,7 +115,7 @@ function HomeProSlider2() {
 					className={`py-1 px-1  bg-yellow-200 text-gray-300   rounded-full transform duration-500 ${
 						butter ? "flex duration-500" : "hidden"
 					}`}
-					ref={navigationPrevRef9}
+					ref={navigationPrevRef8}
 				>
 					{" "}
 					<svg
@@ -140,11 +140,15 @@ function HomeProSlider2() {
 				pagination={{
 					clickable: true,
 				}}
-				navigation={{
-					prevEl: navigationNextRef9.current,
-					nextEl: navigationPrevRef9.current,
+				autoplay={{
+					delay: 10000,
+					disableOnInteraction: false,
 				}}
-				modules={[Pagination, Navigation, A11y]}
+				navigation={{
+					prevEl: navigationNextRef8.current,
+					nextEl: navigationPrevRef8.current,
+				}}
+				modules={[Pagination, Navigation, A11y, Autoplay]}
 				className={` h-[400px]   w-full `}
 			>
 				{Product.map((p) => {

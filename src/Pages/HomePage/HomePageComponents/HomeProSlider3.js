@@ -8,7 +8,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 
 // import required modules
-import { A11y, Navigation, Pagination } from "swiper";
+import { A11y, Autoplay, Navigation, Pagination } from "swiper";
 import { Link } from "react-router-dom";
 import { Context } from "../../../context/Context";
 
@@ -140,11 +140,15 @@ function HomeProSlider3() {
 				pagination={{
 					clickable: true,
 				}}
+				autoplay={{
+					delay: 10000,
+					disableOnInteraction: false,
+				}}
 				navigation={{
 					prevEl: navigationNextRef9.current,
 					nextEl: navigationPrevRef9.current,
 				}}
-				modules={[Pagination, Navigation, A11y]}
+				modules={[Pagination, Navigation, A11y, Autoplay]}
 				className={` h-[400px]   w-full `}
 			>
 				{Product.map((p) => {
