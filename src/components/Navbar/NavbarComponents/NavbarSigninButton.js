@@ -44,7 +44,10 @@ function NavbarSigninButton() {
 					<div className='w-40 pt-4 space-y-5'>
 						<div className='space-y-4'>
 							<div className='flex space-x-2 text-sm pl-1 '>
-								<Link to='/account' className='flex space-x-2 text-sm pl-1'>
+								<Link
+									to='/account/personaldetails'
+									className='flex space-x-2 text-sm pl-1'
+								>
 									<div>
 										<svg
 											xmlns='http://www.w3.org/2000/svg'
@@ -67,7 +70,10 @@ function NavbarSigninButton() {
 								</Link>
 							</div>
 							<div className='flex space-x-2 text-sm pl-1 '>
-								<Link to='/order' className='flex space-x-2 text-sm pl-1'>
+								<Link
+									to='/account/order'
+									className='flex space-x-2 text-sm pl-1'
+								>
 									<div>
 										<svg
 											xmlns='http://www.w3.org/2000/svg'
